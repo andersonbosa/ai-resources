@@ -1,3 +1,5 @@
-# MIA
+# ai resources
 
-Coleção de recursos sobre IA (regras, links, etc).
+Collection of resorces about AI (IDE rules, links, ideas, etc).
+
+License: Public Domain

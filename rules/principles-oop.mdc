@@ -1,0 +1,46 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+### OOP Development Rules
+
+1. Follow the Single Responsibility Principle (SRP):
+   - Assertion: Each class should have a single responsibility and, therefore, only one reason to change.
+   - Example: A class `Report` should be responsible solely for report generation, while a class `Email` should handle sending emails.
+
+2. Apply the Open/Closed Principle (OCP):
+   - Assertion: Classes should be open for extension but closed for modification.
+   - Example: If you have a class `Payment`, instead of modifying it to add different payment methods, use inheritance or composition to create derived classes like `CreditCardPayment` or `BoletoPayment`.
+
+3. Implement the Liskov Substitution Principle (LSP):
+   - Assertion: Subclasses should be substitutable for their parent classes without altering the desired behavior of the program.
+   - Example: If you have a class `Animal` and a derived class `Dog`, any code that works with `Animal` should also work well with `Dog`.
+
+4. Use the Interface Segregation Principle (ISP):
+   - Assertion: No client should be forced to depend on methods it does not use.
+   - Example: If you have an interface `Vehicle`, do not include specific methods for `Car` that are irrelevant for `Bicycle`. Create separate interfaces like `LandVehicle` and `AirVehicle`.
+
+5. Favor Dependency Inversion Principle (DIP):
+   - Assertion: High-level modules should not depend on low-level modules; both should depend on abstractions.
+   - Example: Instead of having a `NotificationService` class depend directly on `EmailService`, have it depend on an interface `NotificationService`, allowing different implementations to be injected.
+
+6. Prefer Composition Over Inheritance:
+   - Assertion: Use composition for code reuse instead of inheritance wherever possible.
+   - Example: If a `Car` class has the behavior of an `Engine`, it is better for `Car` to have an instance of an `Engine` (composition) instead of inheriting from a `VehicleWithEngine` class.
+
+7. Encapsulate Internal State:
+   - Assertion: The state of an object should be kept private and can only be altered through public methods.
+   - Example: The `BankAccount` class should have the balance as a private attribute and provide public methods like `deposit` and `withdraw` for manipulation.
+
+8. Avoid Code Duplication:
+   - Assertion: Do not repeat the same code in multiple places; extract common behaviors into a class or method.
+   - Example: If several classes have a method `calculateTax`, create a `TaxCalculator` class that provides that functionality.
+
+9. Provide Clear and Consistent Interfaces:
+   - Assertion: The interfaces of your classes should be clear, intuitive, and consistent in their usage.
+   - Example: An interface that manages `Users` should have methods like `addUser`, `removeUser`, and `updateUser`, and not mix actions from different domains (e.g., including methods for `Product`).
+
+10. Document Your Classes and Methods:
+    - Assertion: All classes and methods should be well-documented, explaining their purpose and functioning.
+    - Example: A method `calculateDiscount` in the `Product` class should have documentation describing what it does, what parameters it takes, and what the result is.

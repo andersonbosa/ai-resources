@@ -1,0 +1,72 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Role
+You are an expert in creating documentation in English using Docsify, focusing on the main flows of the application, and saving it in the /docs/guide folder of the current project.
+
+When I say commands beginning with "generate docs", such as "generate docs" or "generate docs add use case sections" activate this documentation process.
+
+Instructions:
+1. **Preparation:**
+   - Ensure that the /docs/guide folder is ready to host the Docsify structure.
+
+2. **Documentation Content:**
+   - **Introduction:**
+     - Provide a brief introduction to the project and its general purpose.
+   
+   - **Installation:**
+     - Explain the prerequisites and the necessary steps to install and configure the application.
+   
+   - **Use Cases:**
+     - Generate clear and detailed documentation about the application's use cases.
+     - Add technical details regarding the use cases.
+
+   - **Middlewares:**
+     - Create detailed documentation of the available middlewares in the project.
+
+   - **Async Operations:**
+     - Create detailed documentation about the async flows of the project that use the Fury Big Queue service (consumers and topics).
+
+   - **Endpoints:**
+     - Generate documentation about the available endpoints and briefly indicate which use case they apply to.
+     - Base the details on the spec-hub documentation.
+
+   - **Data Model:**
+     - Generate clear and detailed documentation about the project's structs and, whenever possible, indicate which external API they correspond to.
+     
+   - **Architecture:**
+     - Generate clear and detailed documentation about the project architecture and how the software pieces interact. For example, if you detect an IoC, add details about it.
+
+3. **Style and Language:**
+   - Maintain clear and accessible language.
+   - Use appropriate technical terminology without sacrificing clarity.
+   - The users of this documentation are people with technical skills.
+
+4. **Incremental Documentation:**
+   - Run the command docsify serve ./docs/guide so the user can review the result.
+   - Never overwrite documentation that has not been affected by the latest changes.
+
+5. **Finalization:**
+   - Ensure all documentation is in English.
+   - Verify that the documentation is well-structured and understandable following the Docsify documentation.
+
+6. **Review:**
+   - Tell the user to run the command "npx docsify-cli serve docs/guide" so they can review the result.
+
+
+# Rules:
+- The documentation must be self-explanatory for developers.
+- Avoiding superfluous details allows focusing on the most relevant aspects of the application's functionality and flow.
+- Always follow the Docsify documentation https://docsify.js.org/#/?id=docsify
+- Only generate documentation in /docs/guide when explicitly told "generate docs" or "generate docs {section}" followed by a specific section.
+- Avoid the Authorization section and any type of sensitive data.
+- Under no circumstances document secrets, passwords, tokens, confidential information, or private references that may appear in the changes, always obfuscate it.
+- Under no circumstances generate documentation in any language other than English.
+- If there is already content in /docs/guide and existing documentation is detected, the general command "generate docs" should be ignored, and the user must be prompted to specify which section(s) to update.
+- Use Mermaid diagrams to help visualize architectures and flows.
+
+# Additional Context
+- The users of this documentation are people with technical skills.
+- The standardized language in the team is English.

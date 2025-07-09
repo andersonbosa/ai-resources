@@ -1,0 +1,147 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+### Clean Code Rules
+
+1. Use Intention-Revealing Names:
+   - Assertion: Names should tell you why a variable, function, or class exists, what it does, and how it's used.
+   - Example: Use `getUsersByRole` instead of `getList` or `getUsers`.
+
+2. Functions Should Do One Thing:
+   - Assertion: Functions should have a single responsibility and should do it well.
+   - Example: Separate `validateUser` from `authenticateUser` rather than having a single function that does both.
+
+3. Keep Functions Small:
+   - Assertion: Functions should rarely exceed 20 lines and should fit on one screen.
+   - Example: Break down a large `processPayment` function into smaller ones like `validatePaymentData`, `authorizeTransaction`, and `recordTransaction`.
+
+4. Function Arguments Should Be Few:
+   - Assertion: Functions should have ideally zero, one, or two arguments. Three should be avoided when possible.
+   - Example: Instead of `createUser(name, email, address, phone)`, use `createUser(userDetails)`.
+
+5. Avoid Side Effects in Functions:
+   - Assertion: Functions should not make unexpected changes to state outside their scope.
+   - Example: A function called `validatePassword` should not also update user login timestamps.
+
+6. Don't Repeat Yourself (DRY):
+   - Assertion: Every piece of knowledge or logic should have a single, unambiguous representation in the codebase.
+   - Example: Extract common validation logic into a shared utility rather than duplicating it in multiple controllers.
+
+7. Comments Should Explain Why, Not What:
+   - Assertion: Code should be self-documenting; comments should explain intent, rationale, or clarify complex algorithms.
+   - Example: Instead of `// Set x to zero`, write `// Reset counter before processing new batch`.
+
+8. Classes Should Be Small and Focused:
+   - Assertion: Classes should have a single responsibility and a coherent set of methods and properties.
+   - Example: Split a large `UserManager` class into focused classes like `UserAuthenticator`, `UserProfileManager`, and `UserPreferencesManager`.
+
+9. Error Handling Should Be Explicit:
+   - Assertion: Error handling should be comprehensive and follow consistent patterns, not obscure code logic.
+   - Example: Use explicit try-catch blocks or error types rather than returning special values like `-1` or `null`.
+
+10. Don't Use Magic Numbers:
+    - Assertion: Replace literals with named constants that explain their purpose.
+    - Example: Use `const MAX_LOGIN_ATTEMPTS = 5` instead of hardcoding `5` in your login logic.
+
+11. Follow Standard Conventions:
+    - Assertion: Adhere to the established coding conventions and patterns of your language and team.
+    - Example: Use camelCase for variables and PascalCase for classes in languages where this is standard.
+
+12. Keep it Simple (KISS):
+    - Assertion: Simple solutions are easier to understand, maintain, and debug than complex ones.
+    - Example: Use built-in language features instead of creating elaborate custom solutions when possible.
+
+13. Avoid Nested Conditionals:
+    - Assertion: Excessive nesting makes code hard to read and maintain; extract conditions or use early returns.
+    - Example: Replace deeply nested if statements with guard clauses or extracted helper methods.
+
+14. Use Meaningful Abstractions:
+    - Assertion: Create abstractions that hide details and express higher-level concepts.
+    - Example: Abstract database queries into a Repository class instead of scattering SQL throughout the codebase.
+
+15. Test Your Code:
+    - Assertion: Clean code is testable code. Write tests that verify your code works as expected.
+    - Example: For a `calculateDiscount` function, write tests for various discount scenarios, edge cases, and error conditions.
+
+16. Eliminate Dead Code:
+    - Assertion: Remove code that is no longer used; don't just comment it out.
+    - Example: Delete obsolete features completely rather than keeping them commented out "just in case".
+
+17. Organize Code by Feature, Not Type:
+    - Assertion: Group related functionality together rather than separating by technical role.
+    - Example: Keep all code related to "user authentication" together rather than separating controllers, models, and views into different directories.
+
+18. Avoid Premature Optimization:
+    - Assertion: Write clean, correct code first, then optimize only where necessary based on performance profiling.
+    - Example: Focus on writing clear algorithms before worrying about micro-optimizations like loop unrolling.
+
+19. Practice Consistent Formatting:
+    - Assertion: Code formatting should be consistent throughout the codebase.
+    - Example: Maintain consistent indentation, brace style, and spacing between functions.
+
+20. Maintain Separation of Concerns:
+    - Assertion: Different areas of functionality should be managed by distinct and minimally overlapping code modules.
+    - Example: Separate business logic from data access and presentation layers.
+
+21. Implementation Should Be Obvious:
+    - Assertion: Code should be written in a way that makes its implementation clear and straightforward.
+    - Example: Avoid clever tricks and cryptic expressions in favor of explicit, readable code.
+
+22. Test Every Boundary Condition:
+    - Assertion: Identify and write tests for all edge cases and boundary conditions.
+    - Example: For a function that processes arrays, test empty arrays, single-element arrays, and arrays at the size limit.
+
+23. Base Classes Should Know Nothing About Their Derivatives:
+    - Assertion: Parent classes should not be aware of their child classes to maintain proper abstraction.
+    - Example: An `Animal` base class should not contain any code specific to a `Dog` subclass.
+
+24. Maintain Code Consistency:
+    - Assertion: Use consistent naming conventions and patterns throughout your codebase.
+    - Example: If you use `response` for an HTTP response object in one method, use the same name in all methods.
+
+25. Prefer Non-static Methods to Static Methods:
+    - Assertion: Use instance methods by default, and only use static methods when there's no chance of needing polymorphic behavior.
+    - Example: Methods that operate on object state should be instance methods, not static utilities.
+
+26. Avoid Negative Conditionals:
+    - Assertion: Write conditions that check for the positive case rather than the negative.
+    - Example: Use `if (buffer.shouldCompact())` instead of `if (!buffer.shouldNotCompact())`.
+
+27. Encapsulate Boundary Conditions:
+    - Assertion: Extract complex boundary calculations into named variables or methods.
+    - Example: Replace repeated expressions like `level + 1` with a descriptive variable `nextLevel = level + 1`.
+
+28. Avoid Abbreviations in Names:
+    - Assertion: Use complete words rather than abbreviations to improve readability.
+    - Example: Use `hypotenuse` instead of `hp`, or `userAccount` instead of `uAcc`.
+
+29. Don't Encode Data Structure in Names:
+    - Assertion: Variable names should reflect their purpose, not their implementation.
+    - Example: Use `accounts` instead of `accountList` or `accountArray`.
+
+30. Avoid Names That Vary in Small Ways:
+    - Assertion: Names that differ only slightly are confusing and error-prone.
+    - Example: Avoid having similar names like `ControllerForEfficientHandlingOfStrings` and `ControllerForEfficientStorageOfStrings`.
+
+31. Keep Function Indentation Levels Low:
+    - Assertion: The indent level of a function should not exceed one or two to maintain readability.
+    - Example: Extract deeply nested code into separate functions with descriptive names.
+
+32. Blocks Inside Control Structures Should Be One Line Long:
+    - Assertion: Code blocks within if, else, while statements should ideally be a single line, preferably a function call.
+    - Example: Replace multi-line blocks with calls to well-named functions that document their purpose.
+
+33. Functions Should Have One Level of Abstraction:
+    - Assertion: All statements within a function should be at the same conceptual level.
+    - Example: Don't mix high-level business logic with low-level file I/O operations in the same function.
+
+34. Bury Switch Statements in Low-Level Classes:
+    - Assertion: Switch statements should be used sparingly, preferably only once to create polymorphic objects.
+    - Example: Use a Factory pattern to encapsulate switch statements that instantiate appropriate subclasses.
+
+35. Output Arguments Should Be Avoided:
+    - Assertion: If a function transforms its input, the transformation should appear as the return value.
+    - Example: Instead of modifying a parameter in-place, return a new transformed value.

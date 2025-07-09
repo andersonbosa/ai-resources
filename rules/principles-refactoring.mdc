@@ -1,0 +1,69 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+### Code Refactoring Rules
+
+1. Refactor Only When Tests Are in Place:
+   - Assertion: Never refactor code without having adequate test coverage to ensure functionality remains intact.
+   - Example: Before refactoring a payment processing module, ensure unit tests verify all key paths and edge cases.
+
+2. Make Small, Incremental Changes:
+   - Assertion: Refactor in small, deliberate steps to minimize the risk of introducing bugs.
+   - Example: Instead of rewriting an entire class at once, extract methods one by one, test after each extraction.
+
+3. Follow the Boy Scout Rule:
+   - Assertion: Leave the code better than you found it; make small improvements whenever you touch a piece of code.
+   - Example: If working on a feature in a method with poor variable names, take the opportunity to improve them.
+
+4. Extract Method to Improve Readability:
+   - Assertion: When a code segment becomes too long or performs multiple tasks, extract it into separate, well-named methods.
+   - Example: Replace `calculateTotal()` containing pricing and tax logic with two methods: `calculatePrice()` and `calculateTax()`.
+
+5. Replace Conditional with Polymorphism:
+   - Assertion: Complex conditional logic should be refactored into polymorphic structures when applicable.
+   - Example: Replace a switch statement handling different payment methods with a strategy pattern using `PaymentMethod` interface and concrete implementations.
+
+6. Remove Duplicate Code:
+   - Assertion: Eliminate duplicate code by extracting common functionality into reusable methods or classes.
+   - Example: If validation logic is duplicated across multiple forms, create a shared `ValidationService`.
+
+7. Simplify Complex Conditionals:
+   - Assertion: Refactor complex boolean expressions into well-named methods to enhance readability.
+   - Example: Replace `if (user.age >= 18 && user.hasValidId() && !user.isRestricted())` with `if (user.canPurchaseAlcohol())`.
+
+8. Move Method to Appropriate Class:
+   - Assertion: Methods should reside in classes where they most logically belong, based on the data they use.
+   - Example: Move a `calculateTotalPrice()` method from `Order` to `ShoppingCart` if it primarily uses cart data.
+
+9. Replace Temporary Variables with Query Methods:
+   - Assertion: Replace complex calculations stored in temporary variables with query methods.
+   - Example: Replace `double basePrice = quantity * itemPrice` with a method `getBasePrice()`.
+
+10. Introduce Parameter Object:
+    - Assertion: When a method has too many parameters, group related parameters into a single object.
+    - Example: Change `createUser(String name, String email, String address, String phone)` to `createUser(UserDetails details)`.
+
+11. Decompose Complex Methods:
+    - Assertion: Break down complex methods into smaller, focused methods with clear responsibilities.
+    - Example: Split `processOrder()` into `validateOrder()`, `calculateTotal()`, and `submitToPaymentGateway()`.
+
+12. Rename for Clarity:
+    - Assertion: Always rename variables, methods, and classes when their names don't clearly express their purpose.
+    - Example: Rename `getData()` to `fetchUserProfiles()` to clearly describe what data is being retrieved.
+
+13. Extract Class When Too Many Responsibilities:
+    - Assertion: When a class has too many responsibilities, extract some of its behavior into a new class.
+    - Example: Split a `UserManager` class that handles both authentication and profile updates into `UserAuthenticator` and `UserProfileManager`.
+
+14. Replace Magic Numbers with Named Constants:
+    - Assertion: Replace unexplained numeric literals with named constants.
+    - Example: Replace `if (status == 1)` with `if (status == StatusCodes.ACTIVE)`.
+
+15. Inline Method When Unnecessary Indirection:
+    - Assertion: When a method is a simple delegation or adds no value, inline it to reduce complexity.
+    - Example: If `getName()` just returns `this.name`, consider removing the method if it doesn't add meaningful abstraction.
+
+
+Also Consider our rules to Clean Code [principles-clean-code.mdc](mdc:rules/principles-clean-code.mdc).

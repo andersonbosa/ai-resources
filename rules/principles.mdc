@@ -1,0 +1,77 @@
+---
+alwaysApply: true
+---
+
+### Single Responsibility Principle (SRP)
+- What: A class should have only one reason to change.
+- When to use: Always, when structuring classes or modules to ensure clear separation of concerns.
+
+### Open/Closed Principle (OCP)
+- What: Software entities should be open for extension but closed for modification.
+- When to use: When you want to add new features without changing existing code.
+
+### Liskov Substitution Principle (LSP)
+- What: Subtypes must be substitutable for their base types without breaking the program.
+- When to use: When implementing inheritance or polymorphism.
+
+### Interface Segregation Principle (ISP)
+- What: No client should be forced to depend on methods it does not use.
+- When to use: When defining interfaces, especially in large systems with many roles.
+
+### Dependency Inversion Principle (DIP)
+- What: Depend on abstractions, not on concrete implementations.
+- When to use: When structuring high-level modules to reduce tight coupling.
+
+### Don’t Repeat Yourself (DRY)
+- What: Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+- When to use: Always. Refactor duplicate logic into functions, modules, or classes.
+
+### Factory Method
+- What: Define an interface for creating an object, but let subclasses alter the type of objects that will be created.
+- When to use: When creating objects is complex or dependent on conditions.
+
+### Singleton
+- What: Ensure a class has only one instance and provide a global point of access to it.
+- When to use: When exactly one instance is needed, such as configuration managers or loggers.
+
+### Strategy
+- What: Define a family of algorithms, encapsulate each one, and make them interchangeable.
+- When to use: When you want to switch between different behaviors or algorithms at runtime.
+
+### Observer
+- What: Define a one-to-many dependency so that when one object changes state, all its dependents are notified.
+- When to use: When objects need to react to changes in another object, like UI updates or event systems.
+
+### Decorator
+- What: Attach additional responsibilities to an object dynamically.
+- When to use: When you need to add features to objects without modifying their structure.
+
+### Adapter
+- What: Convert the interface of a class into another interface clients expect.
+- When to use: When integrating incompatible interfaces, such as legacy systems.
+
+### Command
+- What: Encapsulate a request as an object, thereby letting you parameterize clients with different requests.
+- When to use: For undo/redo operations, queues, or logging user actions.
+
+### Proxy
+- What: Provide a surrogate or placeholder for another object to control access to it.
+- When to use: When adding access control, lazy loading, or caching mechanisms.
+
+### Builder
+- What: Separate the construction of a complex object from its representation.
+- When to use: When objects require multiple steps to build or when constructor overloads become confusing.
+
+### Template Method
+- What: Define the skeleton of an algorithm in a method, deferring some steps to subclasses.
+- When to use: When multiple classes share a common algorithm structure but differ in implementation details.
+
+### Principle of Least Astonishment
+- What: Software should behave in a way that least surprises the user.
+- When to use: When designing APIs or user interfaces.
+
+### YAGNI (You Aren’t Gonna Need It)
+- What: Don’t implement something until it’s necessary.
+- When to use: During feature planning or refactoring — avoid premature optimization.
+
+### Would you like this list expanded with more patterns (like Mediator, State, or Composite), or exported as a markdown file?

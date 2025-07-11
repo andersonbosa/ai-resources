@@ -1,0 +1,45 @@
+---
+alwaysApply: false
+---
+
+
+### Test-Driven Development (TDD)
+- What: A software development process where you write tests before writing the implementation code. The cycle follows:
+	1.	Red – Write a failing test
+	2.	Green – Write just enough code to make the test pass
+	3.	Refactor – Clean up the code, keeping all tests green
+- When to use:
+- When building new features or modules
+- When fixing bugs to prevent regressions
+- When refactoring legacy code (wrap with tests first)
+- In high-stakes systems where reliability is critical
+
+### Related TDD Practices
+
+Red-Green-Refactor Rule
+- What: The core loop of TDD that drives development through tests and safe iterations.
+- When to use: Every time you write or change functionality.
+
+### Write the Simplest Code That Passes the Test
+- What: Don’t over-engineer. Only implement what’s necessary to make the test pass.
+- When to use: During the “Green” phase of TDD.
+
+### One Test at a Time
+- What: Write one failing test before writing any production code.
+- When to use: Always. This keeps feedback loops short and focused.
+
+### Tests Are Documentation
+- What: Well-written tests describe what the code is supposed to do.
+- When to use: Continuously. Helps others (and your future self) understand the system behavior.
+
+### Keep Tests Fast and Independent
+- What: Tests should be quick to run and not rely on shared state.
+- When to use: When designing unit and integration tests.
+
+### Avoid Over-Mocking
+- What: Mock only what’s necessary to isolate behavior, not everything.
+- When to use: In unit tests — avoid mocking too much or it defeats the purpose of testing real logic.
+
+### Tests Should Fail Meaningfully
+- What: A failing test should clearly indicate what’s broken and why.
+- When to use: When writing any kind of test — use descriptive names and clear assertions.

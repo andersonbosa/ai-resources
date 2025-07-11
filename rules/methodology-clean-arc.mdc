@@ -1,0 +1,13 @@
+---
+alwaysApply: false
+---
+
+### Port and Adapters Pattern (aka Hexagonal Architecture)
+- What: An architectural pattern that separates core business logic from external systems (like databases, UIs, APIs) using ports (interfaces) and adapters (implementations).
+    - The core (inside) contains the application logic.
+    - Ports define what the core needs or provides.
+    - Adapters implement the ports to connect the core to the outside world.
+- When to use:
+    - When building systems that need to be testable, flexible, and independent of frameworks.
+    - When you want to decouple your domain logic from infrastructure (e.g., switching databases, UIs, APIs with minimal impact).
+    - When applying Clean Architecture or Domain-Driven Design.
